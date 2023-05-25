@@ -1,17 +1,19 @@
+Ctrl + B: Verify/Compile - Compiles the current sketch to check for errors without uploading.
 
-Ctrl + N: Create a new sketch (Open a new tab)
-Ctrl + O: Open an existing sketch
-Ctrl + S: Save the current sketch
-Ctrl + Shift + S: Save the current sketch with a different name
-Ctrl + R: Verify/Compile the current sketch
-Ctrl + U: Upload the current sketch to the Arduino board
-Ctrl + Shift + U: Upload using Programmer (for boards with external programmer)
-Ctrl + L: Go to the line specified by the line number
-Ctrl + T: Auto format the sketch code
-Ctrl + /: Comment/Uncomment the selected lines
-Ctrl + W: Close the current sketch tab
-Ctrl + Shift + T: Reopen the last closed tab
-Ctrl + F: Find text within the current sketch
-Ctrl + H: Replace text within the current sketch
-Ctrl + Shift + F: Find and replace across multiple files
-Ctrl + B: Go to the matching brace
+Ctrl + U: Upload - Compiles and uploads the current sketch to the Arduino board.
+
+Ctrl + Shift + U: Burn Bootloader - Writes a bootloader to an Arduino board.
+
+Ctrl + Shift + M: Serial Monitor - Opens the serial monitor to view the output from the Arduino board.
+
+Ctrl + Shift + L: Show Line Numbers - Toggles the display of line numbers in the editor.
+
+Ctrl + Shift + F: Find in Files - Allows you to search for a specific keyword or text within the entire sketch.
+
+Ctrl + E: Export Compiled Binary - Exports the compiled binary file (.hex) of the sketch.
+
+Ctrl + /: Comment/Uncomment - Comments or uncomments the selected lines of code.
+
+Ctrl + T: Auto Format - Formats the code for better readability and indentation.
+
+Ctrl + Shift + O: Open Sketch Folder - Opens the folder containing the current sketch in the file explorer.

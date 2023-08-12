@@ -1,0 +1,57 @@
+Unnormalized Table:
+
+
+StudentID	StudentName	CourseID	CourseName	Instructor
+1         	Alice	        101,102		Math,Science	Prof. Smith,Prof. Johnson
+2	  	Bob		101		Math		Prof. Smith
+3	  	Carol		102		Science		Prof. Johnson
+
+1. First Normal Form (1NF):
+
+In 1NF, each column should hold atomic values, and each column should have a unique name. The "StudentName," "CourseName," and "Instructor" columns have repeating data. We need to separate students, courses, and instructors into their own rows.
+
+StudentID	StudentName	CourseID	CourseName	Instructor
+1		Alice		101		Math		Prof. Smith
+2		Bob		101		Math		Prof. Smith
+1		Alice		102		Science		Prof. Johnson
+3		Carol		102		Science		Prof. Johnson
+2. Second Normal Form (2NF):
+
+In 2NF, each non-key attribute should be fully functionally dependent on the primary key. The primary key here is a combination of "StudentID" and "CourseID." The "Instructor" column depends only on the "CourseID," not the entire primary key.
+Students Table:
+
+StudentID	StudentName
+1		Alice
+2		Bob
+3		Carol
+Courses Table:
+
+CourseID	CourseName
+101		Math
+102		Science
+
+Instructors Table:
+
+CourseID	Instructor
+101		Prof. Smith
+102		Prof. Johnson
+3. Third Normal Form (3NF):
+
+In 3NF, we eliminate transitive dependencies. The "Instructor" is transitively dependent on the "CourseName." We'll move the "Instructor" to the "Courses" table, where it's directly dependent on the primary key.
+Students Table:
+
+StudentID	StudentName
+1		Alice
+2		Bob
+3		Carol
+Courses Table:
+
+CourseID	CourseName	Instructor
+101		Math		Prof. Smith
+102		Science		Prof. Johnson
+Instructors Table:
+
+CourseID	Instructor
+101		Prof. Smith
+102		Prof. Johnson
+ applying normalization up to 3NF, we've organized the data into separate tables, eliminated data redundancy, and ensured that each attribute is stored without dependency on partial keys. 

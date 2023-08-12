@@ -1,0 +1,46 @@
+
+CREATE DATABASE online_store;
+USE online_store;
+CREATE TABLE Customers (
+    CustomerID INT AUTO_INCREMENT PRIMARY KEY,
+    CustomerName VARCHAR(50),
+    Email VARCHAR(100),
+    Phone VARCHAR(15)
+);
+
+CREATE TABLE Orders (
+    OrderID INT AUTO_INCREMENT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    TotalAmount DECIMAL(10, 2),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+INSERT INTO Customers (CustomerName, Email, Phone) VALUES
+('John Doe', 'john@example.com', '555-123-4567'),
+('Jane Smith', 'jane@example.com', '555-987-6543'),
+('Bob Johnson', 'bob@example.com', '555-555-5555');
+
+INSERT INTO Orders (CustomerID, OrderDate, TotalAmount) VALUES
+(1, '2023-07-15', 150.00),
+(1, '2023-07-20', 75.00),
+(3, '2023-07-22', 200.00),
+(2, '2023-07-25', 50.00);
+
+#inner join
+
+SELECT Customers.CustomerID, Customers.CustomerName, Customers.Email, Orders.OrderID, Orders.OrderDate, Orders.TotalAmount
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+#left join
+SELECT Customers.CustomerID, Customers.CustomerName, Orders.OrderID, Orders.OrderDate, Orders.TotalAmount
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+#right join
+SELECT Customers.CustomerID, Customers.CustomerName, Orders.OrderID, Orders.OrderDate, Orders.TotalAmount
+FROM Customers
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+#outer join
+SELECT Customers.CustomerID, Customers.CustomerName, Orders.OrderID, Orders.OrderDate, Orders.TotalAmount
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
